@@ -1,6 +1,6 @@
 body {font-family: verdana;}
 Grouped selectors h1, h2 {color: aquamarine;}
 .specital {color: blueviolet;}
-selector .evenrow {color: green;}
-selector .h1 {font-size: 30;}
-selector .h2 {font-size: 25;}
+.evenrow {color: green;}
+.h1 {font-size: 3em;}
+.h2 {font-size: 2em;}
