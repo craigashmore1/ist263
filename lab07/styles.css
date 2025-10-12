@@ -12,6 +12,12 @@ nav a {
 
 nav a:hover {
     background-color: #780000; /*back color*/
-    padding: 2px 6px; /*padding*/
     border-radius: 4px; /*corners*/
+}
+
+nav a{
+    background-color: #c1121f; /* example background */
+    padding: 10px;             /* inner space */
+    margin-bottom: 30px;       /* space below nav */
+    text-align: center;        /* optional: center the links */
 }
