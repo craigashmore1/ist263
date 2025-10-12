@@ -5,7 +5,8 @@ body {
     margin: 40px;
 }
 
-a {
+nav a {
     color:#669BBC; /*link color*/
+    font-weight: bold;
 }
 
