@@ -15,7 +15,7 @@ nav a:hover {
     border-radius: 4px; /*corners*/
 }
 
-nav a{
+nav {
     background-color: #c1121f; /* example background */
     padding: 10px;             /* inner space */
     margin-bottom: 30px;       /* space below nav */
