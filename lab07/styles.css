@@ -21,3 +21,7 @@ nav {
     margin-bottom: 30px;       /* space below nav */
     text-align: center;        /* optional: center the links */
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #669BBC; /* replace with your desired hex color */
+}
