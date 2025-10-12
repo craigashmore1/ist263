@@ -1,6 +1,10 @@
-body {font-family: verdana;}
-Grouped selectors h1, h2 {color: aquamarine;}
-.special {color: blueviolet;}
-.evenrow {background-color: green;}
-.h1 {font-size: 3em;}
-.h2 {font-size: 2em;}
+body {
+    background: color #fdf0d5; /*page back*/
+    color: #003049; /*text color*/
+
+}
+
+a {
+    color:#669BBC; /*link color*/
+}
+
