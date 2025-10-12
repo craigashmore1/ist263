@@ -1,6 +1,6 @@
-body {font-family: verdana;}
-Grouped selectors h1, h2 {color: aquamarine;}
-.special {color: blueviolet;}
-.evenrow {background-color: green;}
-.h1 {font-size: 3em;}
-.h2 {font-size: 2em;}
+body {
+    background: color #eea004; /*page back*/
+    color: #003049; /*text color*/
+    font-family:'Times New Roman', Times, serif; /*font*/
+    margin: 40px;
+}
