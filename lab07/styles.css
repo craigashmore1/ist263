@@ -7,6 +7,11 @@ body {
 
 nav a {
     color:#669BBC; /*link color*/
-    font-weight: bold;
+    font-weight: bold; /*bold*/
 }
 
+nav a:hover {
+    background-color: #780000; /*back color*/
+    padding: 2px 6px; /*padding*/
+    border-radius: 4px; /*corners*/
+}
