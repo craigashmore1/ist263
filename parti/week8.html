@@ -4,12 +4,75 @@
     <meta charset="UTF-8">
     <title>Travel Central New York</title>
     <style>
-        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        header {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .flex-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .flex-item {
+            width: 300px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .flex-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-
     <header>
         <nav>
             <ul>
@@ -34,31 +97,36 @@
             <h2>Top Attractions</h2>
 
             <div class="flex-box">
-            <article class="flex-item">
-                <h3>Adirondack Mountains</h3>
-                <p>Perfect for nature lovers, the Adirondacks offer breathtaking views, hiking, and camping opportunities. Don't miss a chance to explore these magnificent mountains.</p>
-            </article>
+                <article class="flex-item">
+                    <h3>Adirondack Mountains</h3>
+                    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-adirondacks.jpg" alt="Adirondack Mountains">
+                    <p>Perfect for nature lovers, the Adirondacks offer breathtaking views, hiking, and camping opportunities. Don't miss a chance to explore these magnificent mountains.</p>
+                </article>
 
-            <article class="flex-item">
-                <h3>Syracuse</h3>
-                <p>A vibrant city with a rich history, Syracuse is home to museums, parks, and the renowned Syracuse University. Be sure to visit the city's downtown for great food and entertainment.</p>
-            </article>
+                <article class="flex-item">
+                    <h3>Syracuse</h3>
+                    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-syracuse.jpg" alt="Downtown Syracuse Public Art">
+                    <p>A vibrant city with a rich history, Syracuse is home to museums, parks, and the renowned Syracuse University. Be sure to visit the city's downtown for great food and entertainment.</p>
+                </article>
 
-            <article class="flex-item">
-                <h3>Niagara Falls</h3>
-                <p>One of the most famous natural wonders in the world, Niagara Falls is a must-see. Whether you view it from a boat tour or one of the observation decks, the falls are a breathtaking sight.</p>
-            </article>
+                <article class="flex-item">
+                    <h3>Niagara Falls</h3>
+                    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-niagara.jpg" alt="Waterfall at Niagara Falls">
+                    <p>One of the most famous natural wonders in the world, Niagara Falls is a must-see. Whether you view it from a boat tour or one of the observation decks, the falls are a breathtaking sight.</p>
+                </article>
 
-            <article class="flex-item">
-                <h3>Seneca Lake</h3>
-                <p>The banks of the blue water of Seneca Lake create a relaxing experience for swimmers and picnickers.</p>
-            </article>
+                <article class="flex-item">
+                    <h3>Seneca Lake</h3>
+                    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-seneca-lake.jpg" alt="Seneca Lakehouse">
+                    <p>The banks of the blue water of Seneca Lake create a relaxing experience for swimmers and picnickers.</p>
+                </article>
 
-            <article class="flex-item">
-                <h3>Ithaca</h3>
-                <p>Ithaca is famous for its many waterfalls, more than 100 within 10 miles of downtown. If you put them all together, it's a waterfall 7,342 feet tall. That's 1.39 miles of falling water!</p>
-            </article>
-        </div>
+                <article class="flex-item">
+                    <h3>Ithaca</h3>
+                    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-upstate.jpg" alt="Trees in Fall near Ithaca">
+                    <p>Ithaca is famous for its many waterfalls, more than 100 within 10 miles of downtown. If you put them all together, it's a waterfall 7,342 feet tall. That's 1.39 miles of falling water!</p>
+                </article>
+            </div>
         </section>
 
         <section id="travel-tips">
@@ -71,17 +139,10 @@
         </section>
     </main>
 
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/travel-logo.png" alt="travel logo">
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-adirondacks.jpg" alt="central new york image">
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-niagara.jpg" alt="waterfall at niagara falls">
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-seneca-lake.jpg" alt="seneca lakehouse">
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-syracuse.jpg" alt="downtown syracuse public art">
-    <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/pexels-upstate.jpg" alt="trees in fall">
-
     <footer>
+        <img src="https://raw.githubusercontent.com/JDScharf/ist263/refs/heads/main/images/travel-logo.png" alt="Travel Central New York Logo" width="150">
         <p>&copy; 2025 Travel Central New York. All rights reserved.</p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </footer>
-
 </body>
 </html>
