@@ -1,0 +1,32 @@
+body 
+    {
+        background: #fdf0d5; /*page back*/
+        color: #003049; /*text color*/
+        font-family:'Times New Roman', Times, serif; /*font*/
+        margin: 40px;
+    }
+
+nav a 
+    {
+        color:#669BBC; /*link color*/
+        font-weight: bold; /*bold*/
+    }
+
+nav a:hover 
+    {
+        background-color: #780000; /*back color*/
+        border-radius: 4px; /*corners*/
+    }
+
+nav 
+    {
+        background-color: #c1121f; /* example background */
+        padding: 10px;             /* inner space */
+        margin-bottom: 30px;       /* space below nav */
+        text-align: center;        /* optional: center the links */
+    }
+
+h1, h2, h3, h4, h5, h6 
+    {
+        color: #669BBC; /* replace with your desired hex color */
+    }
