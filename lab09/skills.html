@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/84a27e97e6.js" crossorigin="anonymous"></script>
+    <title>Skills</title>
+    <style>
+      table, th, td { border: 1px solid black; }
+      .special { text-align: center; }
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .flex2 {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        margin-top: 16px;
+      }
+      .flex2 .col-main { flex: 3;}
+      .flex2 .col-aside { flex: 1; margin-top: 100px;}
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .icons > div {
+        display: grid;
+        place-items: center;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        min-width: 90px;
+      }
+
+      .other-skills {
+        background-color: #003049;
+        border-radius: 1em;
+        color: aliceblue;
+        padding: 16px 18px;
+      }
+      .other-skills h2 { margin: 0 0 8px; }
+      .other-skills p  { margin: 6px 0; }
+      @media (max-width: 800px) {
+        .flex2 { flex-direction: column; }
+        .flex2 .col-aside { min-width: 0; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="skills.html">Skills</a> |
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <h1 class="special">Technical Skills</h1>
+      <div class="flex2">
+        <div class="col-main">
+             <p>
+                Hello! My name is Craig Ashmore, and I am an undecided major. I hope to transfer into the Ischool
+                as I have experience working with communications equipment from the Army, building PC’s, and writing code.
+                Some of my accomplishments include the Expert Infantryman’s Badge, obtaining the rank of Sergeant, and
+                playing a season of golf for OCC. In terms of skills, I bring a lot to the table, including leadership and
+                communication. Outside of work and study, I golf a ton, like going to the beach, and I am from southern California.
+            </p>
+          <div class="icons">
+            <div class="html">
+              <i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
+              <p>HTML</p>
+            </div>
+            <div class="css">
+              <i class="fa-brands fa-css3-alt fa-3x" aria-hidden="true"></i>
+              <p>CSS</p>
+            </div>
+            <div class="java">
+              <i class="fa-brands fa-java fa-3x" aria-hidden="true"></i>
+              <p>Java</p>
+            </div>
+            <div class="info">
+              <i class="fa-solid fa-shield-halved fa-3x" aria-hidden="true"></i>
+              <p>Info Security</p>
+            </div>
+            <div class="windows">
+              <i class="fa-brands fa-windows fa-3x" aria-hidden="true"></i>
+              <p>Windows OS</p>
+            </div>
+          </div>
+        </div>
+        <aside class="col-aside other-skills">
+          <h2>Other Skills</h2>
+          <p>Leadership</p>
+          <p>Communication</p>
+          <p>Teamwork</p>
+          <p>Problem Solving</p>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
