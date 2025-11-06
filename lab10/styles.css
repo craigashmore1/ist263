@@ -30,3 +30,17 @@ h1, h2, h3, h4, h5, h6
     {
         color: #669BBC;
     }
+@media screen and (max-width: 768px) {
+    nav a {
+    display: block;               /* block */
+    width: 100%;                  /* take full line */
+    padding: 12px 10px;           
+    margin: 6px 0;                /* space between */
+    border-radius: 6px;
+  }
+
+  /* Hide the pipe separators when stacked */
+  nav span {
+    display: none;
+  }
+}
