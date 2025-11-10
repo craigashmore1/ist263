@@ -14,7 +14,7 @@ html, body
   flex-direction: column;
 }
 
-/* Allow the main content to expand and push the footer down */
+/* push footer down */
 main 
 {
   flex: 1;
@@ -28,7 +28,7 @@ footer
   padding: 18px 10px 10px;
   font-size: 12px;
   text-align: center;
-  margin-top: auto; /* key line */
+  margin-top: auto;
 }
 
 body 
@@ -101,7 +101,6 @@ main
   position: relative;
 }
 
-/* wireframe pattern */
 .panelshop::before,
 .panelabout::before,
 .panelcontact::before 
@@ -261,7 +260,8 @@ footer
   /* shop page */
 /* ========== SHOP GRID ========== */
 
-.products-grid {
+.products-grid 
+{
   max-width: 1100px;
   margin: 80px auto 100px;
   display: grid;
@@ -270,25 +270,28 @@ footer
 }
 
 /* Individual product card */
-.product-card {
+.product-card 
+{
   position: relative;
-  padding-top: 40px;              /* makes room for the label at top */
+  padding-top: 40px;
 }
 
 /* Transparent button/label sitting on top of image */
-.product-label {
+.product-label 
+{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   padding: 8px 14px;
-  background-color: transparent;  /* transparent like you requested */
+  background-color: transparent;
   font-size: 16px;
   font-weight: 600;
 }
 
-/* Placeholder image box to match wireframe */
-.product-image {
+/* Placeholder image */
+.product-image 
+{
   margin-top: 8px;
   height: 180px;
   background-color: #dedede;
@@ -296,8 +299,10 @@ footer
 }
 
 /* RESPONE FOR SHOP */
-@media (max-width: 768px) {
-  .products-grid {
+@media (max-width: 768px) 
+{
+  .products-grid 
+  {
     grid-template-columns: 1fr;
     gap: 40px;
     margin: 40px auto 60px;
