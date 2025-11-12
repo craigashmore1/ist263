@@ -1,0 +1,379 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* make the page take full height */
+html, body 
+{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* push footer down */
+main 
+{
+  flex: 1;
+}
+
+/* Footer always at bottom */
+footer 
+{
+  background-color: #e6e6e6;
+  border-top: 1px solid #c7c7c7;
+  padding: 18px 10px 10px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: auto;
+}
+
+body 
+{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #f2f2f2;
+}
+
+/* links */
+a 
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TOP BAR */
+header 
+{
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.top-bar 
+{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.logo a 
+{
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.main-nav 
+{
+  display: flex;
+  gap: 18px;
+}
+
+.top-links 
+{
+  display: flex;
+  gap: 14px;
+}
+
+/* SHARED PANEL STYLES */
+
+main 
+{
+  padding-bottom: 40px;
+}
+
+/* base for all three panels */
+.panelshop,
+.panelabout,
+.panelcontact 
+{
+  background-color: #dedede;
+  border-top: 1px solid #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+  padding: 80px 40px;
+  position: relative;
+}
+
+.panelshop::before,
+.panelabout::before,
+.panelcontact::before 
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(45deg, #ffffff 2px, transparent 2px),
+    radial-gradient(circle, #ffffff 6px, transparent 7px);
+  background-size: 80px 80px, 160px 160px;
+  background-position: 0 0, 40px 40px;
+  pointer-events: none;
+}
+
+/* inner content containers */
+.panelshopc,
+.panelaboutc,
+.panelcontactc 
+{
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* SHOP PANEL  */
+
+.panelshopc 
+{
+  text-align: center;
+}
+
+.panelshop h1 
+{
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.panelshop p 
+{
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+/*  ABOUT PANEL */
+
+.panelaboutc 
+{
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+/* CONTACT PANEL */
+
+.panelcontactc 
+{
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+}
+
+/* BUTTONS  */
+
+.btn 
+{
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 40px;
+  border: 2px solid #000;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover 
+{
+  background-color: #000;
+  color: #fff;
+  transition: 0.25s;
+}
+
+/* FOOTER */
+
+footer 
+{
+  background-color: #e6e6e6;
+  border-top: 1px solid #c7c7c7;
+  padding: 18px 10px 10px;
+  font-size: 12px;
+}
+
+.footer-nav 
+{
+  max-width: 700px;
+  margin: 0 auto 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-nav a 
+{
+  padding: 2px 0;
+}
+
+.copyright 
+{
+  text-align: center;
+  color: #555;
+}
+
+/* RESPONSE */
+
+@media (max-width: 768px) 
+{
+  .top-bar 
+  {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-nav 
+  {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .top-links 
+  {
+    justify-content: center;
+  }
+
+  .panelshop,
+  .panelabout,
+  .panelcontact 
+  {
+    padding: 50px 20px;
+  }
+
+  /* mobile */
+  .panelaboutc,
+  .panelcontactc,
+  .panelshopc 
+  {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+  /* shop page */
+/* ========== SHOP GRID ========== */
+
+.products-grid 
+{
+  max-width: 1100px;
+  margin: 80px auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 80px 80px;
+}
+
+/* Individual product card */
+.product-card 
+{
+  position: relative;
+  padding-top: 40px;
+}
+
+/* Transparent button/label sitting on top of image */
+.product-label 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 14px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Placeholder image */
+.product-image 
+{
+  margin-top: 8px;
+  height: 180px;
+  background-color: #dedede;
+  border: 1px solid #c7c7c7;
+}
+
+/* RESPONE FOR SHOP */
+@media (max-width: 768px) 
+{
+  .products-grid 
+  {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+  }
+}
+/* ABOUT PAGE */
+
+.about-layout 
+{
+  max-width: 1200px;
+  margin: 60px auto 80px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+.about-sidebar h2 
+{
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.hours-box 
+{
+  padding: 8px;
+  height: 150px;
+  overflow-y: auto;
+  margin-bottom: 24px;
+}
+
+.location-box 
+{
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.map-placeholder 
+{
+  border: 1px solid #ccc;
+  background-color: #dedede;
+  height: 160px;
+}
+
+/* Right column */
+.about-content h1 
+{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.about-content p 
+{
+  margin-bottom: 16px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* response */
+@media (max-width: 768px) 
+{
+  .about-layout 
+  {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-content h1 
+  {
+    font-size: 26px;
+  }
+}
