@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 11</title>
+    <link rel="stylesheet" href="../styles/animate.css">
+    <script>
+        function WinnerMessage()
+            {
+                document.getElementById("messages").innerHTML = 'You Won!';
+            }
+        function TryAgain()
+            {
+                document.getElementById("messages").innerHTML = 'Wrong Shell - Try Again';
+            }
+            function ShuffleShells()
+            {
+                let shellOrder = [1, 2, 3] .sort(function()
+                {
+                    return Math.random() - 0.5;
+                });
+                console.log("The winning Shell is: " + shellOrder[0])
+                document.getElementById("first").style.order = shellOrder[0];
+                document.getElementById("second").style.order = shellOrder[1];
+                document.getElementById("third").style.order = shellOrder[2];
+            }
+    </script>
+    <style>
+        .container
+            {
+                display: flex;
+            }
+    </style>
+</head>
+<body onload="ShuffleShells();">
+    <h1>Choose a Walnut</h1>
+    <div class="container">
+        <img src="../images/walnut.png" alt="first walnut" onclick="WinnerMessage();" class="first">
+        <img src="../images/walnut.png" alt="second walnut" onclick="TryAgain();" class="second">
+        <img src="../images/walnut.png" alt="third walnut" onclick="TryAgain();" class="third">
+    </div>
+    <div id="messages"></div>
+</body>
+</html>
