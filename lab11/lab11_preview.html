@@ -15,10 +15,8 @@
             {
                 document.getElementById("messages").innerHTML = 'Wrong Shell - Try Again';
             }
-            function ShuffleShells()
-            {
-                let shellOrder = [1, 2, 3] .sort(function()
-                {
+            function ShuffleShells(){
+                let shellOrder = [1, 2, 3] .sort(function(){
                     return Math.random() - 0.5;
                 });
                 console.log("The winning Shell is: " + shellOrder[0])
