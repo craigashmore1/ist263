@@ -807,3 +807,114 @@ select {
   color: #444;
   line-height: 1.5;
 }
+/* ===== HOME PAGE SECTION BACKGROUNDS ===== */
+
+.home-hero,
+.home-about,
+.home-contact {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Individual backgrounds */
+.home-hero {
+  background-image: url("../images/background1.png");
+  min-height: 35vh;          /* ⬅ half of 70vh */
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;        /* reduced padding to match */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-about {
+  background-image: url("../images/background2.png");
+  min-height: 35vh;          /* ⬅ half of 70vh */
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;        /* reduced padding to match */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-contact {
+  background-image: url("../images/background3.png");
+  min-height: 35vh;          /* ⬅ half of 70vh */
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;        /* reduced padding to match */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Content positioning */
+.panel-content {
+  max-width: 1000px;
+}
+
+/* Alignment helpers */
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+/* Make home section text white */
+.home-hero,
+.home-about,
+.home-contact {
+  color: #fff;
+}
+
+/* Ensure headings, paragraphs, and buttons inherit white */
+.home-hero h1,
+.home-about h1,
+.home-contact h1,
+.home-hero p,
+.home-about p,
+.home-contact p {
+  color: #fff;
+}
+
+/* Optional: make buttons readable on images */
+.home-hero .btn,
+.home-about .btn,
+.home-contact .btn {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.home-hero .btn:hover,
+.home-about .btn:hover,
+.home-contact .btn:hover {
+  background: #fff;
+  color: #000;
+}
+/* Black box behind home page text */
+.panel-content {
+  max-width: 1000px;
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.65); /* subtle black */
+  color: #fff;
+  border-radius: 10px;             /* slight softness */
+}
+/* Align panel content to the right */
+.panel-content.right {
+  margin-left: auto;
+  text-align: right;
+}
