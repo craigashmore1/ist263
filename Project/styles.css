@@ -1,59 +1,50 @@
-* 
-{
+/* =========================
+   GLOBAL RESET + LAYOUT
+   ========================= */
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* make the page take full height */
-html, body 
-{
+/* Sticky footer + white page background */
+html {
   height: 100%;
-  margin: 0;
+  background: #fff;
+}
+
+body {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-/* push footer down */
-main 
-{
-  flex: 1;
-}
-
-/* Footer always at bottom */
-footer 
-{
-  background-color: #e6e6e6;
-  border-top: 1px solid #c7c7c7;
-  padding: 18px 10px 10px;
-  font-size: 12px;
-  text-align: center;
-  margin-top: auto;
-}
-
-body 
-{
+  background: #fff;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
-  background-color: #f2f2f2;
 }
 
-/* links */
-a 
-{
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* lets last home section stretch if needed */
+}
+
+/* Links */
+a {
   text-decoration: none;
   color: inherit;
 }
 
-/* TOP BAR */
-header 
-{
-  background-color: #e6e6e6;
-  border-bottom: 1px solid #c7c7c7;
+/* =========================
+   HEADER / NAV
+   ========================= */
+
+header {
+  background-color: #8b1e1e; /* subtle red */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.top-bar 
-{
+.top-bar {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
@@ -62,26 +53,36 @@ header
   justify-content: space-between;
   gap: 24px;
   font-size: 14px;
+  background-color: rgba(139, 30, 30, 0.95);
 }
 
-.logo a 
-{
+.logo a {
   font-weight: bold;
   letter-spacing: 0.5px;
+  color: #fff;
 }
 
-.main-nav 
-{
+.main-nav {
   display: flex;
   gap: 18px;
 }
 
-.top-links 
-{
+.top-links {
   display: flex;
   gap: 14px;
 }
-/* ===== DROPDOWN MENU ===== */
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  color: #f2f2f2;
+}
+
+/* =========================
+   DROPDOWN MENU
+   ========================= */
 
 .dropdown {
   position: relative;
@@ -97,10 +98,10 @@ header
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  border: 1px solid #000;
   min-width: 200px;
   z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 
 /* dropdown links */
@@ -108,15 +109,12 @@ header
   display: block;
   padding: 8px 12px;
   font-size: 14px;
-  border-bottom: 1px solid #ddd;
-}
-
-.dropdown-menu a:last-child {
-  border-bottom: none;
+  color: #000; /* readable on white dropdown */
 }
 
 .dropdown-menu a:hover {
-  background-color: #f2f2f2;
+  background-color: #8b1e1e;
+  color: #fff;
 }
 
 /* show on hover */
@@ -124,18 +122,14 @@ header
   display: block;
 }
 
-/* SHARED PANEL STYLES */
+/* =========================
+   HOME PAGE PANELS (LEGACY)
+   panelshop / panelabout / panelcontact
+   ========================= */
 
-main 
-{
-  padding-bottom: 40px;
-}
-
-/* base for all three panels */
 .panelshop,
 .panelabout,
-.panelcontact 
-{
+.panelcontact {
   background-color: #dedede;
   border-top: 1px solid #c7c7c7;
   border-bottom: 1px solid #c7c7c7;
@@ -143,27 +137,10 @@ main
   position: relative;
 }
 
-.panelshop::before,
-.panelabout::before,
-.panelcontact::before 
-{
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  background-image:
-    linear-gradient(45deg, #ffffff 2px, transparent 2px),
-    radial-gradient(circle, #ffffff 6px, transparent 7px);
-  background-size: 80px 80px, 160px 160px;
-  background-position: 0 0, 40px 40px;
-  pointer-events: none;
-}
-
 /* inner content containers */
 .panelshopc,
 .panelaboutc,
-.panelcontactc 
-{
+.panelcontactc {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
@@ -171,55 +148,23 @@ main
   font-size: 16px;
 }
 
-/* SHOP PANEL  */
+/* panel alignment */
+.panelshopc { text-align: center; }
 
-.product-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-
-.panelshopc 
-{
-  text-align: center;
-}
-
-.panelshop h1 
-{
-  font-size: 36px;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.panelshop p 
-{
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-/*  ABOUT PANEL */
-
-.panelaboutc 
-{
+.panelaboutc {
   margin-left: auto;
   margin-right: 0;
   text-align: right;
 }
 
-/* CONTACT PANEL */
-
-.panelcontactc 
-{
+.panelcontactc {
   margin-right: auto;
   margin-left: 0;
   text-align: left;
 }
 
-/* BUTTONS  */
-
-.btn 
-{
+/* Button */
+.btn {
   display: inline-block;
   margin-top: 16px;
   padding: 10px 40px;
@@ -230,104 +175,92 @@ main
   cursor: pointer;
 }
 
-.btn:hover 
-{
+.btn:hover {
   background-color: #000;
   color: #fff;
   transition: 0.25s;
 }
 
-/* FOOTER */
+/* =========================
+   HOME PAGE SECTION BACKGROUNDS (background1/2/3)
+   ========================= */
 
-footer 
-{
-  background-color: #e6e6e6;
-  border-top: 1px solid #c7c7c7;
-  padding: 18px 10px 10px;
-  font-size: 12px;
-}
-
-.footer-nav 
-{
-  max-width: 700px;
-  margin: 0 auto 8px;
+.home-hero,
+.home-about,
+.home-contact {
+  min-height: 35vh;          /* half-height */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
+  align-items: center;
+  padding: 40px 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-.footer-nav a 
-{
-  padding: 2px 0;
+/* fill any leftover space above footer on short screens */
+.home-contact {
+  flex: 1;
 }
 
-.copyright 
-{
-  text-align: center;
-  color: #555;
+.home-hero   { background-image: url("../images/background1.png"); }
+.home-about  { background-image: url("../images/background2.png"); }
+.home-contact{ background-image: url("../images/background3.png"); }
+
+/* Content box on images */
+.panel-content {
+  max-width: 1000px;
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.65); /* black box */
+  color: #fff;
+  border-radius: 10px;
 }
 
-/* RESPONSE */
+/* Alignment helpers */
+.center { margin: 0 auto; text-align: center; }
+.left   { margin-right: auto; text-align: left; }
+.right  { margin-left: auto; text-align: right; }
 
-@media (max-width: 768px) 
-{
-  .top-bar 
-  {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .main-nav 
-  {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .top-links 
-  {
-    justify-content: center;
-  }
-
-  .panelshop,
-  .panelabout,
-  .panelcontact 
-  {
-    padding: 50px 20px;
-  }
-
-  /* mobile */
-  .panelaboutc,
-  .panelcontactc,
-  .panelshopc 
-  {
-    margin: 0 auto;
-    text-align: center;
-  }
+/* Buttons on image sections */
+.home-hero .btn,
+.home-about .btn,
+.home-contact .btn {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
 }
-  /* shop page */
-/* ========== SHOP GRID ========== */
 
-.products-grid 
-{
+.home-hero .btn:hover,
+.home-about .btn:hover,
+.home-contact .btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   SHOP PAGE GRID
+   ========================= */
+
+.products-grid {
   max-width: 1100px;
   margin: 80px auto 100px;
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 80px 80px;
+  gap: 80px;
 }
 
-/* Individual product card */
-.product-card 
-{
+.product-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card {
   position: relative;
   padding-top: 40px;
 }
 
-/* Transparent button/label sitting on top of image */
-.product-label 
-{
+.product-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -338,30 +271,21 @@ footer
   font-weight: 600;
 }
 
-/* Placeholder image */
-.product-image 
-{
+.product-image {
   margin-top: 8px;
   height: 180px;
   background-color: #dedede;
   border: 1px solid #c7c7c7;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* RESPONE FOR SHOP */
-@media (max-width: 768px) 
-{
-  .products-grid 
-  {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin: 40px auto 60px;
-    padding: 0 20px;
-  }
-}
-/* ABOUT PAGE */
+/* =========================
+   ABOUT PAGE
+   ========================= */
 
-.about-layout 
-{
+.about-layout {
   max-width: 1200px;
   margin: 60px auto 80px;
   display: grid;
@@ -370,65 +294,58 @@ footer
   padding: 0 20px;
 }
 
-.about-sidebar h2 
-{
+.about-sidebar h2 {
   font-size: 18px;
   margin-bottom: 8px;
 }
 
-.hours-box 
-{
+.hours-box {
   padding: 8px;
   height: 150px;
   overflow-y: auto;
   margin-bottom: 24px;
 }
 
-.location-box 
-{
+.location-box {
   padding: 12px;
   margin-bottom: 16px;
 }
 
-.map-placeholder 
-{
+.map-placeholder {
   border: 1px solid #ccc;
   background-color: #dedede;
   height: 160px;
 }
 
-/* Right column */
-.about-content h1 
-{
+.about-content h1 {
   text-align: center;
   font-size: 32px;
   margin-bottom: 24px;
 }
 
-.about-content p 
-{
+.about-content p {
   margin-bottom: 16px;
   line-height: 1.7;
   font-size: 16px;
 }
 
-/* response */
-@media (max-width: 768px) 
-{
-  .about-layout 
-  {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+/* =========================
+   PRODUCT PAGES (Original/Torpedo/Stubby/Sink)
+   ========================= */
 
-  .about-content h1 
-  {
-    font-size: 26px;
-  }
+/* IMPORTANT: no page-level product backgrounds */
+.original-page,
+.torpedo-page,
+.stubby-page,
+.sink-page {
+  background: none !important;
+  background-image: none !important;
 }
-/* ===================== PRODUCT PAGE ===================== */
 
-.torpedo-page, .original-page, .sink-page, .stubby-page {
+.torpedo-page,
+.original-page,
+.sink-page,
+.stubby-page {
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 20px;
@@ -437,34 +354,47 @@ footer
   gap: 60px;
 }
 
-/* ---------- Images ---------- */
-
-.torpedo-images, .original-images, .sink-images, .stubby-images {
+.torpedo-images,
+.original-images,
+.sink-images,
+.stubby-images {
   display: flex;
+  align-items: flex-start;
   gap: 30px;
 }
 
 .thumbnail-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+  width: 120px;
+  flex: 0 0 120px;
 }
 
 .thumb {
   width: 120px;
   height: 90px;
   background-color: #dedede;
+  background-size: contain;   /* fit inside thumbnail */
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
 .main-image {
   width: 420px;
   height: 300px;
   background-color: #dedede;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* ---------- Product Info ---------- */
-
-.torpedo-info, .original-info, .sink-info, .stubby-info h1 {
+/* Product headings */
+.torpedo-info h1,
+.original-info h1,
+.sink-info h1,
+.stubby-info h1 {
   font-size: 28px;
   margin-bottom: 6px;
 }
@@ -474,30 +404,16 @@ footer
   margin-bottom: 10px;
 }
 
-.torpedo-info, .original-info, .sink-info, .stubby-info hr {
+.torpedo-info hr,
+.original-info hr,
+.sink-info hr,
+.stubby-info hr {
   margin: 14px 0 20px;
   border: none;
   border-top: 1px solid #000;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-select {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #000;
-}
-
-/* ---------- Quantity ---------- */
-
+/* Quantity */
 .quantity-group {
   display: flex;
   justify-content: space-between;
@@ -525,8 +441,7 @@ select {
   border-right: 1px solid #000;
 }
 
-/* ---------- Buttons ---------- */
-
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   width: 100%;
@@ -546,6 +461,78 @@ select {
   background-color: #444;
   color: #fff;
 }
+
+/* Product image assignments (div backgrounds) */
+.original-page .main-image { background-image: url("../images/original1.png"); }
+.original-page .thumbnail-column .thumb:first-child { background-image: url("../images/original1.png"); }
+.original-page .thumbnail-column .thumb:last-child  { background-image: url("../images/original2.png"); }
+
+.torpedo-page .main-image { background-image: url("../images/torpedo1.png"); }
+.torpedo-page .thumbnail-column .thumb:first-child { background-image: url("../images/torpedo1.png"); }
+.torpedo-page .thumbnail-column .thumb:last-child  { background-image: url("../images/torpedo2.png"); }
+
+.stubby-page .main-image { background-image: url("../images/stubby1.png"); }
+.stubby-page .thumbnail-column .thumb:first-child { background-image: url("../images/stubby1.png"); }
+.stubby-page .thumbnail-column .thumb:last-child  { background-image: url("../images/stubby2.png"); }
+
+.sink-page .main-image { background-image: url("../images/sink1.png"); }
+.sink-page .thumbnail-column .thumb { background-image: url("../images/sink1.png"); } /* single thumb */
+
+/* =========================
+   PRODUCT BIO
+   ========================= */
+
+.bio-section {
+  margin-top: 30px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.bio-section p {
+  margin-bottom: 14px;
+}
+
+.bio-section strong {
+  font-weight: 600;
+}
+
+.bio-heading {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.bio-list {
+  list-style-type: disc;
+  font-size: 13px;
+  margin-left: 18px;
+  margin-bottom: 14px;
+}
+
+.bio-list li {
+  margin-bottom: 5px;
+}
+
+.bio-list .note {
+  font-size: 12px;
+  color: #d7d7d7; /* readable on dark box if used */
+}
+
+.bio-note {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.bio-warning {
+  font-size: 12.5px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* =========================
+   CART PAGE
+   ========================= */
+
 .cart-page {
   max-width: 1000px;
   margin: 60px auto;
@@ -598,7 +585,10 @@ select {
   justify-content: space-between;
   align-items: center;
 }
-/* ================= CONTACT PAGE ================= */
+
+/* =========================
+   CONTACT PAGE
+   ========================= */
 
 .contact-page {
   max-width: 700px;
@@ -646,11 +636,14 @@ select {
   padding: 10px 50px;
   margin-top: 10px;
 }
-/* ===== SPECS ===== */
+
+/* =========================
+   SPECS PAGES (full image)
+   ========================= */
 
 .full-image-page {
   width: 100%;
-  height: calc(100vh - 160px); 
+  height: calc(100vh - 160px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -662,259 +655,97 @@ select {
   height: 100%;
   object-fit: contain;
 }
-/* ===== ORIGINAL PRODUCT IMAGES ===== */
 
-/* MAIN image */
-.original-page .main-image {
-  background-image: url("../images/original1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+/* =========================
+   FOOTER (matches header)
+   ========================= */
+
+footer {
+  background-color: #8b1e1e;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 0;
 }
 
-/* Thumbnail boxes: fit image inside the box */
-.original-page .thumbnail-column .thumb {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Assign thumbnail images */
-.original-page .thumbnail-column .thumb:first-child {
-  background-image: url("../images/original1.png");
-}
-
-.original-page .thumbnail-column .thumb:last-child {
-  background-image: url("../images/original2.png");
-}
-/* ===== STUBBY PRODUCT IMAGES ===== */
-
-.stubby-page .main-image {
-  background-image: url("../images/stubby1.png"); /* default */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Thumbnail images */
-.stubby-page .thumbnail-column .thumb:first-child {
-  background-image: url("../images/stubby1.png");
-}
-
-.stubby-page .thumbnail-column .thumb:last-child {
-  background-image: url("../images/stubby2.png");
-}
-
-/* Ensure thumbnails fit */
-.stubby-page .thumbnail-column .thumb {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-
-.sink-page .main-image {
-  background-image: url("../images/sink1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.sink-page .thumbnail-column .thumb {
-  background-image: url("../images/sink1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-/* ===== TORPEDO PRODUCT IMAGES ===== */
-
-.torpedo-page .main-image {
-  background-image: url("../images/torpedo1.png"); /* default */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Thumbnail images */
-.torpedo-page .thumbnail-column .thumb:first-child {
-  background-image: url("../images/torpedo1.png");
-}
-
-.torpedo-page .thumbnail-column .thumb:last-child {
-  background-image: url("../images/torpedo2.png");
-}
-
-/* Ensure thumbnails fit nicely */
-.torpedo-page .thumbnail-column .thumb {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-/* ===== PRODUCT BIO STYLING ===== */
-
-.bio-section {
-  margin-top: 30px;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.bio-section p {
-  margin-bottom: 14px;
-}
-
-.bio-section strong {
-  font-weight: 600;
-}
-
-.bio-list {
-  margin-left: 20px;
-  list-style-type: disc;
-}
-
-.bio-list li {
-  margin-bottom: 6px;
-}
-.bio-heading {
-  font-size: 14px;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.bio-list {
-  font-size: 13px;
-  margin-left: 18px;
-  margin-bottom: 14px;
-}
-
-.bio-list li {
-  margin-bottom: 5px;
-}
-
-.bio-list .note {
-  font-size: 12px;
-  color: #555;
-}
-
-.bio-note {
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-
-.bio-warning {
-  font-size: 12.5px;
-  color: #444;
-  line-height: 1.5;
-}
-/* ===== HOME PAGE SECTION BACKGROUNDS ===== */
-
-.home-hero,
-.home-about,
-.home-contact {
-  min-height: 70vh;
+.footer-nav {
+  max-width: 700px;
+  margin: 0 auto 10px;
   display: flex;
-  align-items: center;
-  padding: 80px 60px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Individual backgrounds */
-.home-hero {
-  background-image: url("../images/background1.png");
-  min-height: 35vh;          /* ⬅ half of 70vh */
-  display: flex;
-  align-items: center;
-  padding: 40px 60px;        /* reduced padding to match */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+footer a {
+  color: #fff;
 }
 
-.home-about {
-  background-image: url("../images/background2.png");
-  min-height: 35vh;          /* ⬅ half of 70vh */
-  display: flex;
-  align-items: center;
-  padding: 40px 60px;        /* reduced padding to match */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+footer a:hover {
+  color: #f2f2f2;
 }
 
-.home-contact {
-  background-image: url("../images/background3.png");
-  min-height: 35vh;          /* ⬅ half of 70vh */
-  display: flex;
-  align-items: center;
-  padding: 40px 60px;        /* reduced padding to match */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Content positioning */
-.panel-content {
-  max-width: 1000px;
-}
-
-/* Alignment helpers */
-.center {
-  margin: 0 auto;
+footer .copyright {
   text-align: center;
+  font-size: 13px;
+  color: #f2f2f2;
 }
 
-.left {
-  margin-right: auto;
-}
+/* =========================
+   RESPONSIVE
+   ========================= */
 
-.right {
-  margin-left: auto;
-}
-/* Make home section text white */
-.home-hero,
-.home-about,
-.home-contact {
-  color: #fff;
-}
+@media (max-width: 768px) {
+  .top-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
 
-/* Ensure headings, paragraphs, and buttons inherit white */
-.home-hero h1,
-.home-about h1,
-.home-contact h1,
-.home-hero p,
-.home-about p,
-.home-contact p {
-  color: #fff;
-}
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-/* Optional: make buttons readable on images */
-.home-hero .btn,
-.home-about .btn,
-.home-contact .btn {
-  color: #fff;
-  border: 2px solid #fff;
-  background: transparent;
-}
+  .top-links {
+    justify-content: center;
+  }
 
-.home-hero .btn:hover,
-.home-about .btn:hover,
-.home-contact .btn:hover {
-  background: #fff;
-  color: #000;
-}
-/* Black box behind home page text */
-.panel-content {
-  max-width: 1000px;
-  padding: 20px 24px;
-  background: rgba(0, 0, 0, 0.65); /* subtle black */
-  color: #fff;
-  border-radius: 10px;             /* slight softness */
-}
-/* Align panel content to the right */
-.panel-content.right {
-  margin-left: auto;
-  text-align: right;
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-content h1 {
+    font-size: 26px;
+  }
+
+  .home-hero,
+  .home-about,
+  .home-contact {
+    padding: 30px 20px;
+  }
+
+  .panel-content {
+    max-width: 100%;
+  }
+
+  .torpedo-page,
+  .original-page,
+  .sink-page,
+  .stubby-page {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .main-image {
+    width: 100%;
+    height: 260px;
+  }
 }
