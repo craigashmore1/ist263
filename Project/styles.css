@@ -377,3 +377,123 @@ footer
     font-size: 26px;
   }
 }
+/* ===================== PRODUCT PAGE ===================== */
+
+.torpedo-page {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+}
+
+/* ---------- Images ---------- */
+
+.torpedo-images {
+  display: flex;
+  gap: 30px;
+}
+
+.thumbnail-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.thumb {
+  width: 120px;
+  height: 90px;
+  background-color: #dedede;
+}
+
+.main-image {
+  width: 420px;
+  height: 300px;
+  background-color: #dedede;
+}
+
+/* ---------- Product Info ---------- */
+
+.torpedo-info h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.torpedo-info hr {
+  margin: 14px 0 20px;
+  border: none;
+  border-top: 1px solid #000;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #000;
+}
+
+/* ---------- Quantity ---------- */
+
+.quantity-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.quantity-controls span {
+  width: 40px;
+  text-align: center;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #444;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #444;
+  color: #fff;
+}

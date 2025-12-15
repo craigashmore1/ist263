@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shop - Urinal Beer Keg</title>
+  <title>Product – Urinal Beer Keg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-<script src="cart.js"></script>
 <body>
 
-  <!-- Top -->
+  <!-- HEADER -->
   <header>
     <div class="top-bar">
       <div class="logo">
         <a href="index.html">Urinal Beer Keg</a>
       </div>
+
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
@@ -22,6 +22,7 @@
         <a href="contact.html">Contact</a>
         <a href="specs.html">Product Specifications</a>
       </nav>
+
       <div class="top-links">
         <a href="cart.html">Cart</a>
         <a href="account.html">Account</a>
@@ -29,43 +30,59 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <section class="products-grid">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-label">
-          Original Urinal Beer Keg
+    <section class="torpedo-page">
+
+      <!-- LEFT: IMAGES -->
+      <div class="torpedo-images">
+
+        <div class="thumbnail-column">
+          <div class="thumb"></div>
+          <div class="thumb"></div>
         </div>
-        <div class="product-image"></div>
+
+        <div class="main-image"></div>
+
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-label">
-          Torpedo Urinal Beer Keg
+      <!-- RIGHT: PRODUCT INFO -->
+      <div class="torpedo-info">
+
+        <h1>Torpedo</h1>
+        <p class="price">$$$</p>
+
+        <hr>
+
+    <div class="quantity-group">
+        <label>Quantity</label>
+        <div class="quantity-controls">
+            <button id="decrease">−</button>
+            <span id="quantity">1</span>
+            <button id="increase">+</button>
         </div>
-        <div class="product-image"></div>
+    </div>
+
+    <button class="btn-primary" id="addToCart">
+        Add to Cart
+    </button>
+
+        <!-- Buttons -->
+        <button class="btn-primary">Add to Cart</button>
+        <button class="btn-secondary">Pay with Google</button>
+
+        <!-- Bio -->
+        <div class="bio-section">
+          <label for="bio">BIO</label>
+          <textarea id="bio"></textarea>
+        </div>
+
       </div>
 
-      <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-label">
-          Stubby Urinal Beer Keg
-        </div>
-        <div class="product-image"></div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card">
-        <div class="product-label">
-          Keg Sink
-        </div>
-        <div class="product-image"></div>
-      </div>
     </section>
   </main>
 
-  <!-- Bottom Nav + Footer -->
+  <!-- FOOTER -->
   <footer>
     <nav class="footer-nav">
       <a href="index.html">Home</a>
@@ -75,8 +92,9 @@
       <a href="specs.html">Product Specifications</a>
       <a href="account.html">Account</a>
     </nav>
+
     <p class="copyright">
-      Copyright &copy; 2025 Urinal Beer Keg. All Rights Reserved.
+      Copyright © 2022 Urinal Beer Keg - All Rights Reserved.
     </p>
   </footer>
 
