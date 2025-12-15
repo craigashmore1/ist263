@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-<script src="cart.js"></script>
+
 <body>
 
   <!-- Top -->
@@ -20,48 +20,57 @@
         <a href="shop.html">Shop</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
-        <a href="specs.html">Product Specifications</a>
+        <div class="dropdown">
+        <a href="specs.html" class="dropdown-toggle">Product Specifications</a>
+        <div class="dropdown-menu">
+        <a href="original-specs.html">Original Keg</a>
+        <a href="sink-specs.html">Keg Sink</a>
+        <a href="torpedo-specs.html">Torpedo Keg</a>
+        <a href="stubby-specs.html">Stubby Keg</a>
+      </div>
+    </div>
       </nav>
       <div class="top-links">
         <a href="cart.html">Cart</a>
-        <a href="account.html">Account</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="products-grid">
+
       <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-label">
-          Original Urinal Beer Keg
+      <a href="original.html" class="product-link">
+        <div class="product-card">
+          <div class="product-label">Original Urinal Beer Keg</div>
+          <img src="../images/original1.png" alt="Original Urinal Beer Keg" class="product-image">
         </div>
-        <div class="product-image"></div>
-      </div>
+      </a>
 
       <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-label">
-          Torpedo Urinal Beer Keg
+      <a href="torpedo.html" class="product-link">
+        <div class="product-card">
+          <div class="product-label">Torpedo Urinal Beer Keg</div>
+          <img src="../images/torpedo1.png" alt="Torpedo Urinal Beer Keg" class="product-image">
         </div>
-        <div class="product-image"></div>
-      </div>
+      </a>
 
       <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-label">
-          Stubby Urinal Beer Keg
+      <a href="stubby.html" class="product-link">
+        <div class="product-card">
+          <div class="product-label">Stubby Urinal Beer Keg</div>
+          <img src="../images/stubby1.png" alt="Stubby Urinal Beer Keg" class="product-image">
         </div>
-        <div class="product-image"></div>
-      </div>
+      </a>
 
       <!-- Product 4 -->
-      <div class="product-card">
-        <div class="product-label">
-          Keg Sink
+      <a href="sink.html" class="product-link">
+        <div class="product-card">
+          <div class="product-label">Keg Sink</div>
+           <img src="../images/sink1.png" alt="Keg Sink made from a repurposed beer keg" class="product-image">
         </div>
-        <div class="product-image"></div>
-      </div>
+      </a>
+
     </section>
   </main>
 
@@ -80,5 +89,7 @@
     </p>
   </footer>
 
+  <!-- Put scripts at the bottom -->
+  <script src="cart.js"></script>
 </body>
 </html>

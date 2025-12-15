@@ -81,6 +81,48 @@ header
   display: flex;
   gap: 14px;
 }
+/* ===== DROPDOWN MENU ===== */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+/* hidden by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 /* SHARED PANEL STYLES */
 
@@ -130,6 +172,13 @@ main
 }
 
 /* SHOP PANEL  */
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 
 .panelshopc 
 {
@@ -379,7 +428,7 @@ footer
 }
 /* ===================== PRODUCT PAGE ===================== */
 
-.torpedo-page {
+.torpedo-page, .original-page, .sink-page, .stubby-page {
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 20px;
@@ -390,7 +439,7 @@ footer
 
 /* ---------- Images ---------- */
 
-.torpedo-images {
+.torpedo-images, .original-images, .sink-images, .stubby-images {
   display: flex;
   gap: 30px;
 }
@@ -415,7 +464,7 @@ footer
 
 /* ---------- Product Info ---------- */
 
-.torpedo-info h1 {
+.torpedo-info, .original-info, .sink-info, .stubby-info h1 {
   font-size: 28px;
   margin-bottom: 6px;
 }
@@ -425,7 +474,7 @@ footer
   margin-bottom: 10px;
 }
 
-.torpedo-info hr {
+.torpedo-info, .original-info, .sink-info, .stubby-info hr {
   margin: 14px 0 20px;
   border: none;
   border-top: 1px solid #000;
@@ -496,4 +545,265 @@ select {
 .btn-secondary {
   background-color: #444;
   color: #fff;
+}
+.cart-page {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.cart-page h1 {
+  margin-bottom: 30px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 120px 120px 40px;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.cart-item h3 {
+  margin: 0;
+}
+
+.cart-item .qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ================= CONTACT PAGE ================= */
+
+.contact-page {
+  max-width: 700px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 8px;
+  border: 1px solid #000;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form .btn-primary {
+  align-self: center;
+  padding: 10px 50px;
+  margin-top: 10px;
+}
+/* ===== SPECS ===== */
+
+.full-image-page {
+  width: 100%;
+  height: calc(100vh - 160px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.full-page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* ===== ORIGINAL PRODUCT IMAGES ===== */
+
+/* MAIN image */
+.original-page .main-image {
+  background-image: url("../images/original1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Thumbnail boxes: fit image inside the box */
+.original-page .thumbnail-column .thumb {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Assign thumbnail images */
+.original-page .thumbnail-column .thumb:first-child {
+  background-image: url("../images/original1.png");
+}
+
+.original-page .thumbnail-column .thumb:last-child {
+  background-image: url("../images/original2.png");
+}
+/* ===== STUBBY PRODUCT IMAGES ===== */
+
+.stubby-page .main-image {
+  background-image: url("../images/stubby1.png"); /* default */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Thumbnail images */
+.stubby-page .thumbnail-column .thumb:first-child {
+  background-image: url("../images/stubby1.png");
+}
+
+.stubby-page .thumbnail-column .thumb:last-child {
+  background-image: url("../images/stubby2.png");
+}
+
+/* Ensure thumbnails fit */
+.stubby-page .thumbnail-column .thumb {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.sink-page .main-image {
+  background-image: url("../images/sink1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sink-page .thumbnail-column .thumb {
+  background-image: url("../images/sink1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+/* ===== TORPEDO PRODUCT IMAGES ===== */
+
+.torpedo-page .main-image {
+  background-image: url("../images/torpedo1.png"); /* default */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Thumbnail images */
+.torpedo-page .thumbnail-column .thumb:first-child {
+  background-image: url("../images/torpedo1.png");
+}
+
+.torpedo-page .thumbnail-column .thumb:last-child {
+  background-image: url("../images/torpedo2.png");
+}
+
+/* Ensure thumbnails fit nicely */
+.torpedo-page .thumbnail-column .thumb {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+/* ===== PRODUCT BIO STYLING ===== */
+
+.bio-section {
+  margin-top: 30px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.bio-section p {
+  margin-bottom: 14px;
+}
+
+.bio-section strong {
+  font-weight: 600;
+}
+
+.bio-list {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.bio-list li {
+  margin-bottom: 6px;
+}
+.bio-heading {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.bio-list {
+  font-size: 13px;
+  margin-left: 18px;
+  margin-bottom: 14px;
+}
+
+.bio-list li {
+  margin-bottom: 5px;
+}
+
+.bio-list .note {
+  font-size: 12px;
+  color: #555;
+}
+
+.bio-note {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.bio-warning {
+  font-size: 12.5px;
+  color: #444;
+  line-height: 1.5;
 }

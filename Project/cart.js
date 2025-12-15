@@ -1,44 +1,89 @@
-// ====== QUANTITY CONTROLS ======
-let quantity = 1;
+document.addEventListener("DOMContentLoaded", () => {
+  // ---------- PRODUCT IMAGE SWAP (works on any product page) ----------
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".thumb[data-image]");
 
-const quantityDisplay = document.getElementById("quantity");
-const increaseBtn = document.getElementById("increase");
-const decreaseBtn = document.getElementById("decrease");
+  if (mainImage && thumbnails.length) {
+    // set main image to first thumb by default (optional)
+    const first = thumbnails[0].getAttribute("data-image");
+    if (first) mainImage.style.backgroundImage = `url("${first}")`;
 
-increaseBtn.addEventListener("click", () => {
-  quantity++;
-  quantityDisplay.textContent = quantity;
-});
-
-decreaseBtn.addEventListener("click", () => {
-  if (quantity > 1) {
-    quantity--;
-    quantityDisplay.textContent = quantity;
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const img = thumb.getAttribute("data-image");
+        if (img) mainImage.style.backgroundImage = `url("${img}")`;
+      });
+    });
   }
-});
 
-// ====== ADD TO CART ======
-const addToCartBtn = document.getElementById("addToCart");
+  // ---------- QUANTITY + ADD TO CART ----------
+  const qtyEl = document.getElementById("quantity");
+  const incBtn = document.getElementById("increase");
+  const decBtn = document.getElementById("decrease");
+  const addBtn = document.getElementById("addToCart");
 
-addToCartBtn.addEventListener("click", () => {
-  const product = {
-    name: "Original Urinal Beer Keg",
-    price: 79.99,
-    quantity: quantity
+  // If this page doesn't have cart controls, stop here safely
+  if (!qtyEl || !incBtn || !decBtn || !addBtn) return;
+
+  let quantity = 1;
+
+  const productBox =
+    document.querySelector("[data-product][data-price]") || document.body;
+
+  const productName = productBox.getAttribute("data-product") || "Product";
+  const productPrice = parseFloat(productBox.getAttribute("data-price")) || 0;
+
+  const renderQty = () => {
+    qtyEl.textContent = quantity;
   };
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  incBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    quantity++;
+    renderQty();
+  });
 
-  // Check if product already exists
-  const existingProduct = cart.find(item => item.name === product.name);
+  decBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (quantity > 1) quantity--;
+    renderQty();
+  });
 
-  if (existingProduct) {
-    existingProduct.quantity += quantity;
-  } else {
-    cart.push(product);
-  }
+  addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+    const item = {
+      name: productName,
+      price: productPrice,
+      quantity: quantity
+    };
 
-  alert("Added to cart!");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find((x) => x.name === item.name);
+    if (existing) {
+      existing.quantity += item.quantity;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Added to cart!");
+  });
+
+  renderQty();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.querySelector(".original-page .main-image");
+  const thumbnails = document.querySelectorAll(".original-page .thumb");
+
+  if (!mainImage || thumbnails.length === 0) return;
+
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const img = thumb.getAttribute("data-image");
+      mainImage.style.backgroundImage = `url("${img}")`;
+    });
+  });
 });
